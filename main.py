@@ -36,7 +36,8 @@ for song in song_names:
         uri = result["tracks"]["items"][0]["uri"]
         song_uris.append(uri)
     except IndexError:
+        pass
 
-playlist = sp.user_playlist_create(user=user_id, name=f"{date} Throwback Thursday", public=False)
+playlist = sp.user_playlist_create(user=user_id, name=f"Throwback Thurs {date}", public=False)
 
 sp.playlist_add_items(playlist_id=playlist["id"], items=song_uris)
